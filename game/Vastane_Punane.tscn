@@ -1,0 +1,53 @@
+[gd_scene load_steps=14 format=2]
+
+[ext_resource path="res://assets/Enemy/punane/Mänguprojekt - Punakas3.png" type="Texture" id=1]
+[ext_resource path="res://assets/Enemy/punane/Mänguprojekt - Punakas4.png" type="Texture" id=2]
+[ext_resource path="res://assets/Enemy/punane/Mänguprojekt - Punakas6.png" type="Texture" id=3]
+[ext_resource path="res://assets/Enemy/punane/Mänguprojekt - Punakas9.png" type="Texture" id=4]
+[ext_resource path="res://assets/Enemy/punane/Mänguprojekt - Punakas1.png" type="Texture" id=5]
+[ext_resource path="res://assets/Enemy/punane/Mänguprojekt - Punakas7.png" type="Texture" id=7]
+[ext_resource path="res://assets/Enemy/punane/Mänguprojekt - Punakas5.png" type="Texture" id=9]
+[ext_resource path="res://assets/Enemy/punane/Mänguprojekt - Punakas8.png" type="Texture" id=10]
+[ext_resource path="res://assets/Enemy/punane/Mänguprojekt - Punakas2.png" type="Texture" id=11]
+[ext_resource path="res://Vastane_Punane.gd" type="Script" id=18]
+
+[sub_resource type="SpriteFrames" id=1]
+animations = [ {
+"frames": [ ExtResource( 5 ), ExtResource( 11 ), ExtResource( 1 ), ExtResource( 1 ), ExtResource( 2 ), ExtResource( 9 ), ExtResource( 3 ), ExtResource( 7 ), ExtResource( 10 ), ExtResource( 4 ) ],
+"loop": true,
+"name": "walk",
+"speed": 12.0
+} ]
+
+[sub_resource type="RectangleShape2D" id=2]
+extents = Vector2( 466.667, 733.222 )
+
+[sub_resource type="RectangleShape2D" id=3]
+extents = Vector2( 511.111, 66.6667 )
+
+[node name="Vastane_Punane" type="KinematicBody2D"]
+scale = Vector2( 0.045, 0.045 )
+script = ExtResource( 18 )
+
+[node name="AnimatedSprite" type="AnimatedSprite" parent="."]
+frames = SubResource( 1 )
+animation = "walk"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2( -22.2222, 155.556 )
+shape = SubResource( 2 )
+
+[node name="RayCast2D" type="RayCast2D" parent="."]
+position = Vector2( 436.362, 0 )
+enabled = true
+cast_to = Vector2( 0, 1000 )
+
+[node name="StompDetector" type="Area2D" parent="."]
+monitorable = false
+collision_layer = 0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StompDetector"]
+modulate = Color( 0.0352941, 0.219608, 0.956863, 1 )
+position = Vector2( -22.2222, -644.444 )
+shape = SubResource( 3 )
+[connection signal="body_entered" from="StompDetector" to="." method="_on_StompDetector_body_entered"]
