@@ -18,6 +18,10 @@ func _physics_process(delta: float) -> void:
 func get_direction() -> Vector2:
 	if Input.is_action_pressed("move_right"):
 		$AnimatedSprite.play("run")
+		$AnimatedSprite.flip_h = false
+	elif Input.is_action_pressed("move_left"): 
+		$AnimatedSprite.play("run")
+		$AnimatedSprite.flip_h = true
 	elif Input.is_action_pressed("jump"): 
 		$AnimatedSprite.play("jump")
 	else:
@@ -47,6 +51,3 @@ func calculate_move_velocity(
 func calculate_stomp_velocity(linear_velocity: Vector2, stomp_impulse: float) -> Vector2:
 	var stomp_jump: = -speed.y if Input.is_action_pressed("jump") else -stomp_impulse
 	return Vector2(linear_velocity.x, stomp_jump)
-
-
-

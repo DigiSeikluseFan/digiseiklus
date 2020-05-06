@@ -1,14 +1,16 @@
-[gd_scene load_steps=15 format=2]
+[gd_scene load_steps=17 format=2]
 
 [ext_resource path="res://objektid/ram.tscn" type="PackedScene" id=1]
 [ext_resource path="res://src/Actors/Player.tscn" type="PackedScene" id=2]
-[ext_resource path="res://src/Actors/Player.gd" type="Script" id=3]
+[ext_resource path="res://objektid/Checkpoint_red1.tscn" type="PackedScene" id=3]
 [ext_resource path="res://assets/Background/taust_elementidega.png" type="Texture" id=4]
 [ext_resource path="res://src/Levels/Fall_Checkpoint_1.gd" type="Script" id=5]
 [ext_resource path="res://objektid/Must_pind.tscn" type="PackedScene" id=6]
 [ext_resource path="res://objektid/vent.tscn" type="PackedScene" id=7]
 [ext_resource path="res://assets/Background/taust_elementideta_2CLEAN.png" type="Texture" id=8]
-[ext_resource path="res://objektid/CP_punane.tscn" type="PackedScene" id=11]
+[ext_resource path="res://src/Levels/Level1.gd" type="Script" id=9]
+[ext_resource path="res://objektid/Checkpoint_red3.tscn" type="PackedScene" id=10]
+[ext_resource path="res://objektid/Checkpoint_red2.tscn" type="PackedScene" id=11]
 [ext_resource path="res://assets/Background/taust_elementidega_10.png" type="Texture" id=15]
 [ext_resource path="res://assets/Background/taust_elementidega_11.png" type="Texture" id=16]
 [ext_resource path="res://objektid/Vaike_vent.tscn" type="PackedScene" id=17]
@@ -19,6 +21,8 @@ extents = Vector2( 1754.35, 10 )
 
 [node name="Level1" type="Node2D"]
 position = Vector2( 1, -1 )
+script = ExtResource( 9 )
+player = ExtResource( 2 )
 
 [node name="Taust" type="Node2D" parent="."]
 __meta__ = {
@@ -144,14 +148,6 @@ scale = Vector2( 12.1806, 5.73016 )
 position = Vector2( 79965.3, 1420.63 )
 scale = Vector2( 2.25694, 5.73016 )
 
-[node name="CP_punane" parent="." instance=ExtResource( 11 )]
-position = Vector2( 3697, 688 )
-scale = Vector2( 0.144, 0.126 )
-
-[node name="Player" parent="." instance=ExtResource( 2 )]
-position = Vector2( 190, 787 )
-script = ExtResource( 3 )
-
 [node name="Ram" type="Node2D" parent="."]
 position = Vector2( 701, 729 )
 scale = Vector2( 0.39, 0.391 )
@@ -177,10 +173,10 @@ position = Vector2( 9038.46, 107.417 )
 position = Vector2( 10143.6, -81.8414 )
 
 [node name="ram7" parent="Ram" instance=ExtResource( 1 )]
-position = Vector2( 14051.3, -145.78 )
+position = Vector2( 13991, 9.93301 )
 
 [node name="ram8" parent="Ram" instance=ExtResource( 1 )]
-position = Vector2( 15094.9, -506.394 )
+position = Vector2( 15042.9, -260.531 )
 
 [node name="ram9" parent="Ram" instance=ExtResource( 1 )]
 position = Vector2( 16125.6, -145.78 )
@@ -328,19 +324,19 @@ position = Vector2( 99622.2, 2711.11 )
 scale = Vector2( 1, 1 )
 
 [node name="Vastane_Punane8" parent="Vastased" instance=ExtResource( 18 )]
-position = Vector2( 122711, -1377.78 )
+position = Vector2( 121856, 236.297 )
 scale = Vector2( 1, 1 )
 
 [node name="Vastane_Punane9" parent="Vastased" instance=ExtResource( 18 )]
-position = Vector2( 131400, -4577.78 )
+position = Vector2( 130783, -2132.94 )
 scale = Vector2( 1, 1 )
 
 [node name="Vastane_Punane10" parent="Vastased" instance=ExtResource( 18 )]
-position = Vector2( 140800, -1377.78 )
+position = Vector2( 140848, -1187.89 )
 scale = Vector2( 1, 1 )
 
 [node name="Vastane_Punane11" parent="Vastased" instance=ExtResource( 18 )]
-position = Vector2( 153933, 2711.11 )
+position = Vector2( 153014, 2938.41 )
 scale = Vector2( 1, 1 )
 
 [node name="Vastane_Punane12" parent="Vastased" instance=ExtResource( 18 )]
@@ -409,3 +405,21 @@ shape = SubResource( 1 )
 __meta__ = {
 "_edit_lock_": true
 }
+
+[node name="Checkpoint_red1" parent="." instance=ExtResource( 3 )]
+position = Vector2( 402.262, 727.284 )
+
+[node name="Checkpoint_red2" parent="." instance=ExtResource( 11 )]
+position = Vector2( 7266.11, 723.667 )
+
+[node name="Checkpoint_red3" parent="." instance=ExtResource( 10 )]
+position = Vector2( 11787, 735.104 )
+
+[node name="CP1" type="Position2D" parent="."]
+position = Vector2( 3877.99, 811.591 )
+
+[node name="CP2" type="Position2D" parent="."]
+position = Vector2( 7402.33, 700.833 )
+
+[node name="CP3" type="Position2D" parent="."]
+position = Vector2( 11794.5, 576.385 )
