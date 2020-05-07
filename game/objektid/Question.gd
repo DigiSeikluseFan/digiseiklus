@@ -1,4 +1,4 @@
-extends Node2D
+extends Control
 export (String, FILE, "*.tscn") var level_scene
 export (String) var question
 export (String) var answer1

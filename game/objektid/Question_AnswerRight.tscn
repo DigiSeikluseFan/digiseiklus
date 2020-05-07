@@ -1,8 +1,9 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=6 format=2]
 
 [ext_resource path="res://objektid/Question_Answers.gd" type="Script" id=1]
 [ext_resource path="res://assets/Background/küsimuste_popup_puhas.png" type="Texture" id=2]
 [ext_resource path="res://assets/Background/taust_FINAL (1).png" type="Texture" id=3]
+[ext_resource path="res://assets/Xerox_Serif_dynamicfont.tres" type="DynamicFont" id=4]
 
 [sub_resource type="ImageTexture" id=1]
 lossy_quality = 0.0
@@ -24,11 +25,12 @@ normal_map = SubResource( 1 )
 
 [node name="Label" type="Label" parent="."]
 modulate = Color( 0.0627451, 0.0588235, 0.0588235, 1 )
-margin_left = 607.0
-margin_top = 298.0
-margin_right = 1215.0
-margin_bottom = 527.0
+margin_left = 621.203
+margin_top = 357.854
+margin_right = 1229.2
+margin_bottom = 586.854
 size_flags_horizontal = 4
+custom_fonts/font = ExtResource( 4 )
 custom_constants/line_spacing = 0
 custom_constants/shadow_offset_y = 0
 text = "Tubli! Vastasid õigesti. Jätkad mängu!
