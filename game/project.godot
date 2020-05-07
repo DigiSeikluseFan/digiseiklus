@@ -24,12 +24,22 @@ config/name="Digiseiklus_v1"
 run/main_scene="res://src/Levels/Level1.tscn"
 config/icon="res://icon.png"
 
+[autoload]
+
+TeleporterData="*res://src/Levels/teleporter_data.gd"
+CheckpointRed1="*res://objektid/Checkpoint_red1.tscn"
+CheckpointRed2="*res://objektid/Checkpoint_red2.tscn"
+CheckpointRed3="*res://objektid/Checkpoint_red3.tscn"
+CheckpointGreen1="*res://objektid/Checkpoint_green1.tscn"
+CheckpointGreen2="*res://objektid/Checkpoint_green2.tscn"
+CheckpointGreen3="*res://objektid/Checkpoint_green3.tscn"
+
 [display]
 
 window/size/width=1920
 window/size/height=1080
-window/size/test_width=1024
-window/size/test_height=600
+window/stretch/mode="2d"
+window/stretch/aspect="keep"
 
 [input]
 
@@ -49,6 +59,14 @@ jump={
 , Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":0,"alt":false,"shift":false,"control":false,"meta":false,"command":false,"pressed":false,"scancode":32,"unicode":0,"echo":false,"script":null)
  ]
 }
+
+[layer_names]
+
+2d_physics/layer_1="player"
+2d_physics/layer_2="checkpoint"
+2d_physics/layer_3="enemy_red"
+2d_physics/layer_4="enemy_green"
+2d_physics/layer_5="player_damage"
 
 [rendering]
 
